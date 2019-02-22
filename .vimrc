@@ -48,3 +48,6 @@ inoreabbr cont context 'description' do<CR>end<ESC>?description<CR>h
 inoreabbr it' it 'meets some expectation' do<cr>end<esc>o
 " inoreabbr exp expect(actual).to eq(expected)<ESC>^/\(actual\\|expected\))<CR>b
 
+" NERDTree
+let NERDTreeShowHidden=1
+
