@@ -65,3 +65,11 @@ let NERDTreeShowHidden=1
 
 " Mappings
 nnoremap <C-b> :Buffers<CR>
+noremap <Up> <NOP>
+inoremap <Up> <NOP>
+noremap <Down> <NOP>
+inoremap <Down> <NOP>
+noremap <Left> <NOP>
+inoremap <Left> <NOP>
+noremap <Right> <NOP>
+inoremap <Right> <NOP>
