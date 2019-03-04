@@ -6,6 +6,7 @@ call plug#begin()
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'mileszs/ack.vim'
+  Plug 'jeffkreeftmeijer/vim-numbertoggle'
 call plug#end()
 
 " FZF
@@ -19,7 +20,7 @@ set hlsearch 	" Highlight search results by default toggle off with :nohlsearch
 set laststatus=2 " Always show status line.
 set mouse=a 	" Mouse in all modes
 set mousehide 	" Hide mouse after chars typed
-set number 	" Line numbers on
+set number relativenumber 	" Line numbers on
 set novisualbell " No blinking .
 set nowrap 	" Line wrapping off
 " set ruler 	" Ruler on, show cursor <line>,<column> in the status
@@ -43,6 +44,7 @@ set tabstop=2 " Tabs are 2 spaces
 syntax enable
 set foldmethod=syntax
 set foldlevel=5
+set autoread
 
 " Abbreviations
 
