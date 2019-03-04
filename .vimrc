@@ -11,7 +11,10 @@ call plug#end()
 
 " FZF
 set rtp+=~/.fzf
-
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
 " Appearance
 set background=dark
 colorscheme allomancer
@@ -67,7 +70,7 @@ let NERDTreeShowHidden=1
 
 " Mappings
 nnoremap <C-b> :Buffers<CR>
-noremap <Up> <NOP>
+noremap <Up> :Files<CR>
 inoremap <Up> <NOP>
 noremap <Down> <NOP>
 inoremap <Down> <NOP>
