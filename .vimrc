@@ -35,7 +35,7 @@ set nowrap 	" Line wrapping off
 " set ruler 	" Ruler on, show cursor <line>,<column> in the status
 set showmatch 	" Show matching brackets...
 set mat=5 	" ...blink the cursor over matching bracket
-set guifont=Hack\ Nerd\ Font:h14
+set guifont=Hack\ Nerd\ Font:h14 " Download the font: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Hack.zip
 
 " Whitespace adjustments
 set autoindent  " auto-indent on entering insert mode
