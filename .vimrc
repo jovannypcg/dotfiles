@@ -12,7 +12,10 @@ call plug#begin()
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'mileszs/ack.vim'
-  Plug 'jeffkreeftmeijer/vim-numbertoggle'
+  " Plug 'jeffkreeftmeijer/vim-numbertoggle'
+  Plug 'scrooloose/nerdtree'
+  Plug 'guns/vim-clojure-static'
+  Plug 'tpope/vim-fireplace'
 call plug#end()
 
 " FZF
@@ -29,13 +32,13 @@ set hlsearch 	" Highlight search results by default toggle off with :nohlsearch
 set laststatus=2 " Always show status line.
 set mouse=a 	" Mouse in all modes
 set mousehide 	" Hide mouse after chars typed
-set number relativenumber 	" Line numbers on
+set nu! " Line numbers on
 set novisualbell " No blinking .
 set nowrap 	" Line wrapping off
 " set ruler 	" Ruler on, show cursor <line>,<column> in the status
 set showmatch 	" Show matching brackets...
 set mat=5 	" ...blink the cursor over matching bracket
-set guifont=Hack\ Nerd\ Font:h14 " Download the font: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Hack.zip
+set guifont=Hack\ Nerd\ Font:h16
 
 " Whitespace adjustments
 set autoindent  " auto-indent on entering insert mode
