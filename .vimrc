@@ -8,6 +8,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" To install the plugins, run `:PlugInstall`
 call plug#begin()
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
@@ -16,7 +17,16 @@ call plug#begin()
   Plug 'scrooloose/nerdtree'
   Plug 'guns/vim-clojure-static'
   Plug 'tpope/vim-fireplace'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-fugitive'
+  Plug 'vim-scripts/paredit.vim'
+  Plug 'luochen1990/rainbow'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 call plug#end()
+
+let g:airline_theme='luna'
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
 " FZF
 set rtp+=~/.fzf
