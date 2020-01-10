@@ -25,7 +25,7 @@ call plug#begin()
   Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-let g:airline_theme='luna'
+" let g:airline_theme='luna'
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
 " FZF
@@ -34,21 +34,25 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
+
 " Appearance
+colorscheme darcula
 set background=dark
-colorscheme allomancer
 set colorcolumn=80
 set hlsearch 	" Highlight search results by default toggle off with :nohlsearch
 set laststatus=2 " Always show status line.
 set mouse=a 	" Mouse in all modes
 set mousehide 	" Hide mouse after chars typed
-set nu! " Line numbers on
 set novisualbell " No blinking .
 set nowrap 	" Line wrapping off
 " set ruler 	" Ruler on, show cursor <line>,<column> in the status
 set showmatch 	" Show matching brackets...
 set mat=5 	" ...blink the cursor over matching bracket
 set guifont=Hack\ Nerd\ Font:h16
+" Line number
+set nu! " Line numbers on
+set rnu!
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 " Whitespace adjustments
 set autoindent  " auto-indent on entering insert mode
@@ -97,3 +101,16 @@ noremap <Left> <NOP>
 inoremap <Left> <NOP>
 noremap <Right> <NOP>
 inoremap <Right> <NOP>
+nnoremap <C-e> :Eval<CR>
+nnoremap E :%Eval<CR>
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+" open omni completion menu closing previous if open and opening new menu without changing the text
+inoremap <expr> <C-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Esc>i') : '') .
+            \ '<C-x><C-o><C-r>=pumvisible() ? "\<lt>C-n>\<lt>C-p>\<lt>Down>" : ""<CR>'
+" open user completion menu closing previous if open and opening new menu without changing the text
+inoremap <expr> <S-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Esc>i') : '') .
+            \ '<C-x><C-u><C-r>=pumvisible() ? "\<lt>C-n>\<lt>C-p>\<lt>Down>" : ""<CR>'
