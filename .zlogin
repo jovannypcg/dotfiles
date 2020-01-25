@@ -14,3 +14,5 @@ alias dosy="docker-sync"
 
 alias ecr="$(aws ecr get-login --no-include-email --region us-east-1)"
 
+alias lfmt="lein cljfmt fix"
+alias lns="lein nsorg -e"
