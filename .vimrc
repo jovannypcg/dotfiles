@@ -37,8 +37,9 @@ let g:fzf_action = {
 
 " Appearance
 colorscheme darcula
-set background=dark
-set colorcolumn=80
+
+" set background=dark
+set colorcolumn=0
 set hlsearch 	" Highlight search results by default toggle off with :nohlsearch
 set laststatus=2 " Always show status line.
 set mouse=a 	" Mouse in all modes
