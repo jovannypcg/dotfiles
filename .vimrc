@@ -38,7 +38,8 @@ let g:fzf_action = {
 " Appearance
 colorscheme darcula
 
-" set background=dark
+set background=dark
+set t_Co=256
 set colorcolumn=0
 set hlsearch 	" Highlight search results by default toggle off with :nohlsearch
 set laststatus=2 " Always show status line.
@@ -53,7 +54,7 @@ set guifont=Hack\ Nerd\ Font:h16
 " Line number
 set nu! " Line numbers on
 set rnu!
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+" highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 " Whitespace adjustments
 set autoindent  " auto-indent on entering insert mode
@@ -115,3 +116,6 @@ inoremap <expr> <C-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Es
 " open user completion menu closing previous if open and opening new menu without changing the text
 inoremap <expr> <S-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Esc>i') : '') .
             \ '<C-x><C-u><C-r>=pumvisible() ? "\<lt>C-n>\<lt>C-p>\<lt>Down>" : ""<CR>'
+nnoremap j jzz
+nnoremap k kzz
+nnoremap G Gzz
