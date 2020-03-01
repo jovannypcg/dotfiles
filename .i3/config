@@ -1,4 +1,5 @@
 set $mod Mod1
+set $term --no-startup-id tilix
 
 exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
 
@@ -36,7 +37,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec $term
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -61,10 +63,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -101,16 +103,16 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 # Consider https://fontawesome.com/v4.7.0/cheatsheet/
-set $ws1 "1: terms"
+set $ws1 "1: dev"
 set $ws2 "2: web"
-set $ws3 "3: multi"
-set $ws4 "4: mails"
-set $ws5 "5: office"
+set $ws3 "3: msn"
+set $ws4 "4"
+set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws9 "9: vpn"
+set $ws10 "0: code"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -136,13 +138,16 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-workspace $ws1 output eDP1
+bindsym $mod+Tab       workspace next
+bindsym $mod+Shift+Tab workspace prev
+
+# workspace $ws1 output eDP1
 
 # Open application in specific workspace
 # Run  xprop and clic on application
 # Get the second value of WM_CLASS(STRING)
 
-assign [class="firefox"] $ws1
+# assign [class="firefox"] $ws1
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -215,11 +220,13 @@ hide_edge_borders both
 bindsym $mod+space exec rofi -show run -lines 3 -eh 2 -width 50 -padding 50 -opacity 85 -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg #9575cd
 
 exec_always compton
+# exec_always --no-startup-id $HOME/.config/i3/scripts/start-polybar.sh
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3status
+        position top
         colors {
                 background $bg-color
                 separator  #757575
