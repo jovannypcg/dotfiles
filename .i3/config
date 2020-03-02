@@ -1,7 +1,20 @@
 set $mod Mod1
 set $term --no-startup-id tilix
 
+# ===============
+# i3-gaps
+# ===============
+
+for_window [class="^.*"] border pixel 2
+gaps inner 5
+gaps outer 5
+
+bindsym $mod+z		gaps outer current plus 5
+bindsym $mod+Shift+z	gaps outer current minus 5
+
 exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
+#exec "setxkbmap -layout us,es"
+#exec "setxkbmap -option 'grp:alt_shift_toggle'"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -103,7 +116,7 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 # Consider https://fontawesome.com/v4.7.0/cheatsheet/
-set $ws1 "1: dev"
+set $ws1 "1: term"
 set $ws2 "2: web"
 set $ws3 "3: msn"
 set $ws4 "4"
@@ -111,8 +124,8 @@ set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9: vpn"
-set $ws10 "0: code"
+set $ws9 "9: nu"
+set $ws10 "0: dev"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -157,10 +170,9 @@ bindsym $mod+Shift+r restart
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # shutdown / restart / suspend...
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Ctrl+s) shutdown
+set $mode_system (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Ctrl+s) shutdown
 
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $i3lockwall, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id $i3lockwall && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id $i3lockwall && systemctl hibernate, mode "default"
@@ -219,14 +231,17 @@ hide_edge_borders both
 
 bindsym $mod+space exec rofi -show run -lines 3 -eh 2 -width 50 -padding 50 -opacity 85 -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg #9575cd
 
-exec_always compton
+# exec_always compton
 # exec_always --no-startup-id $HOME/.config/i3/scripts/start-polybar.sh
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command i3blocks # i3status
         position top
+        separator_symbol " | "
+        font pango:Hack Nerd Font Regular 10
+        height 25
         colors {
                 background $bg-color
                 separator  #757575
@@ -241,7 +256,9 @@ bar {
 # Install imagemagick and scrot
 set $i3lockwall sh ~/.config/i3/scripts/lock.sh
 # bindsym $mod+shift+x exec i3lock
-bindsym $mod+shift+x exec --no-startup-id $i3lockwall
+# bindsym $mod+shift+x exec --no-startup-id $i3lockwall
+exec --no-startup-id betterlockscreen -w dim
+bindsym $mod+shift+x exec betterlockscreen -l dim
 
 # Wallpaper
 # Install feh: sudo pacman -Sy feh
