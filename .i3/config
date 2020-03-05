@@ -6,13 +6,13 @@ set $term --no-startup-id tilix
 # ===============
 
 for_window [class="^.*"] border pixel 2
-gaps inner 5
-gaps outer 5
+gaps inner 3
+gaps outer 3
 
 bindsym $mod+z		gaps outer current plus 5
 bindsym $mod+Shift+z	gaps outer current minus 5
 
-exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
+# exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
 #exec "setxkbmap -layout us,es"
 #exec "setxkbmap -option 'grp:alt_shift_toggle'"
 
@@ -116,16 +116,16 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 # Consider https://fontawesome.com/v4.7.0/cheatsheet/
-set $ws1 "1: term"
-set $ws2 "2: web"
-set $ws3 "3: msn"
-set $ws4 "4"
+set $ws1 "1: tty"
+set $ws2 "2: dev"
+set $ws3 "3: web"
+set $ws4 "4: misc"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9: nu"
-set $ws10 "0: dev"
+set $ws9 "9"
+set $ws10 "0: nu"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -213,7 +213,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color 	         #2f343f
+set $bg-color            #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
@@ -263,7 +263,7 @@ bindsym $mod+shift+x exec betterlockscreen -l dim
 # Wallpaper
 # Install feh: sudo pacman -Sy feh
 # exec_always feh --bg-scale /home/jcruz/Pictures/wallpaper.jpg
-exec_always --no-startup-id feh --no-fehbg --bg-fill /home/jovannypcg/Pictures/Wallpapers/wallpaper.jpg
+# exec_always --no-startup-id feh --no-fehbg --bg-fill /home/jovannypcg/Pictures/Wallpapers/wallpaper.jpg
 
 # Configure multiple monitors
 # Install arandr: sudo pacman -Sy arandr
