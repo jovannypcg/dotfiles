@@ -1,0 +1,265 @@
+# i3blocks config file
+# Based on: https://github.com/Anachron/i3blocks.git
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+#command=/usr/lib/i3blocks/$BLOCK_NAME
+# [window]
+# command=~/.config/i3blocks/blocks/scroll $BLOCK_NAME
+# label=
+# markup=pango
+# interval=repeat
+
+# Part 1
+
+# [playerctl]
+# command=~/.config/i3blocks/blocks/playerctl $BLOCK_NAME
+# label= 
+# instance=ncspot
+# interval=5
+
+# Run nmcli to get instance
+# [bandwidth]
+# command=~/.config/i3blocks/blocks/bandwidth $BLOCK_NAME
+# instance=ens20u1u2;in
+# label= 
+# interval=1
+
+# [bandwidth]
+# command=~/.config/i3blocks/blocks/bandwidth $BLOCK_NAME
+# instance=ens20u1u2;out
+# label=
+# interval=1
+
+# Part 2
+
+# [bluetooth]
+# command=~/.config/i3blocks/blocks/bluetooth $BLOCK_NAME
+# label= 
+# interval=10
+
+#[brightness]
+#label=
+#interval=5
+
+#[countdown]
+#instance=tomorrow 05:00:00
+#label=
+#interval=1
+
+# Part 3
+
+# Run nmcli to get the interface
+[network]
+command=~/.config/i3blocks/blocks/network $BLOCK_NAME
+label= 
+instance=wlp59s0
+interval=20
+
+[ethernet]
+command=~/.config/i3blocks/blocks/network $BLOCK_NAME
+label= 
+instance=ens20u1u2
+interval=20
+
+[memory]
+command=~/.config/i3blocks/blocks/memory $BLOCK_NAME
+label= 
+instance=mem;free
+interval=30
+
+[cpu]
+command=~/.config/i3blocks/blocks/cpu $BLOCK_NAME
+label=  
+interval=2
+
+# [display]
+# command=~/.config/i3blocks/blocks/display $BLOCK_NAME
+# label=  
+# interval=5
+
+# Part 4
+#[feed]
+#instance=http://goo.gl/bR2hcp
+#label=
+#interval=60
+
+#[firewall]
+#label=
+#interval=10
+
+#[ip-address]
+#label=
+#interval=60
+
+# Part 5
+
+#[keystate]
+#label=
+#instance=caps
+#interval=1
+
+#[keystate]
+#label=
+#instance=num
+#interval=1
+
+#[launcher]
+#label=
+#interval=once
+
+# [load]
+# command=~/.config/i3blocks/blocks/load $BLOCK_NAME
+# label=
+# interval=10
+
+# Part 6
+
+# [locale]
+# command=~/.config/i3blocks/blocks/locale $BLOCK_NAME
+# label= 
+# interval=once
+
+#[mail]
+#label=
+#instance=~/.gmx-private
+#interval=60
+
+#[memory]
+#label=
+#instance=swap;total
+#interval=30
+
+# Part 7
+
+#[network]
+#label=
+#instance=enp4s0f2
+#interval=10
+
+#[packages]
+#label=
+#interval=300
+
+# Part 8
+
+#[process]
+#instance=http
+#label=
+#interval=10
+
+#[space]
+#label=
+#interval=30
+
+#[space]
+#label=
+#instance=/pub
+#interval=30
+
+# Part 9
+
+# [ssid]
+# command=~/.config/i3blocks/blocks/ssid $BLOCK_NAME
+# label= 
+# interval=60
+
+# [temperature]
+# command=~/.config/i3blocks/blocks/temperature $BLOCK_NAME
+# instance=Core
+# label= 
+# interval=5
+
+# [user]
+# command=~/.config/i3blocks/blocks/user $BLOCK_NAME
+# label= 
+# interval=once
+
+# Part 10
+
+#[vpn]
+#command=~/.config/i3blocks/blocks/vpn $BLOCK_NAME
+#label=
+#interval=5
+
+# [weather]
+# command=~/.config/i3blocks/blocks/weather $BLOCK_NAME
+# instance=2910831
+# interval=60
+
+# [webcam]
+# command=~/.config/i3blocks/blocks/webcam $BLOCK_NAME
+# label=  
+# interval=5
+
+# Part 11
+#[usb]
+#instance=PhotoSmart
+#label=
+#interval=10
+
+#[trash]
+#label=
+#interval=10
+
+#[cmus]
+#command=~/.i3-blocks/blocks/scroll $BLOCK_NAME
+#label=
+#markup=pango
+#interval=repeat
+
+# Part 12
+
+#[window]
+#command=~/.i3-blocks/blocks/scroll $BLOCK_NAME
+#label=
+#markup=pango
+#interval=repeat
+
+[keymap]
+command=~/.i3-blocks/blocks/keymap $BLOCK_NAME
+label=
+interval=10
+
+[audio]
+command=~/.config/i3blocks/blocks/audio $BLOCK_NAME
+label= 
+interval=5
+
+[microphone]
+command=~/.config/i3blocks/blocks/microphone $BLOCK_NAME
+label= 
+interval=5
+
+[battery]
+command=~/.config/i3blocks/blocks/battery $BLOCK_NAME
+label= 
+instance=0
+interval=5
+
+[datetime]
+command=~/.config/i3blocks/blocks/datetime $BLOCK_NAME
+label= 
+interval=5
