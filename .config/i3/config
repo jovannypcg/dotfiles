@@ -6,8 +6,8 @@ set $term --no-startup-id tilix
 # ===============
 
 for_window [class="^.*"] border pixel 2
-gaps inner 3
-gaps outer 3
+gaps inner 2
+gaps outer 2
 
 bindsym $mod+z		gaps outer current plus 5
 bindsym $mod+Shift+z	gaps outer current minus 5
@@ -124,7 +124,7 @@ set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
+set $ws9 "9: meet"
 set $ws10 "0: nu"
 
 # switch to workspace
