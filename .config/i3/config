@@ -5,9 +5,9 @@ set $term --no-startup-id tilix
 # i3-gaps
 # ===============
 
-for_window [class="^.*"] border pixel 2
-gaps inner 2
-gaps outer 2
+for_window [class="^.*"] border pixel 0
+gaps inner 5
+gaps outer 0
 
 bindsym $mod+z		gaps outer current plus 5
 bindsym $mod+Shift+z	gaps outer current minus 5
@@ -227,12 +227,15 @@ client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-col
 client.urgent           $urgent-bg-color $urgent-bg-color $text-color $indicator-color #900000
 
 # hide indicator and other borders
-hide_edge_borders both
+# hide_edge_borders both
 
-bindsym $mod+space exec rofi -show run -lines 3 -eh 2 -width 50 -padding 50 -opacity 85 -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg #9575cd
+# bindsym $mod+space exec rofi -location 0 -show drun -lines 3 -eh 2 -width 50 -padding 50 -opacity 85 -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg #9575cd
+bindsym $mod+space exec rofi -location 0 -show drun -theme slate.rasi
 
-# exec_always compton
 # exec_always --no-startup-id $HOME/.config/i3/scripts/start-polybar.sh
+
+# compton
+exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
