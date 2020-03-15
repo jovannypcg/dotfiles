@@ -213,21 +213,22 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+set $nu                  #8A05BE
 set $bg-color            #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
-set $indicator-color     #00ff00
+set $urgent-bg-color     $nu
+set $indicator-color     #8A05BE
 
-# class                 border  backgr. text    indicator child_border
-client.focused          $bg-color $bg-color $text-color $indicator-color #285577
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator-color #222222
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator-color #5f676a
-client.urgent           $urgent-bg-color $urgent-bg-color $text-color $indicator-color #900000
+# class                 border              background         text                 indicator        child_border
+client.focused          $bg-color           $bg-color          $text-color          $indicator-color #285577
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color #222222
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color #5f676a
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $indicator-color #900000
 
 # hide indicator and other borders
-# hide_edge_borders both
+# hide_edge_borders horizontal
 
 # bindsym $mod+space exec rofi -location 0 -show drun -lines 3 -eh 2 -width 50 -padding 50 -opacity 85 -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg #9575cd
 bindsym $mod+space exec rofi -location 0 -show drun -theme slate.rasi
