@@ -5,7 +5,7 @@ set $term --no-startup-id tilix
 # i3-gaps
 # ===============
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
 gaps inner 5
 gaps outer 0
 
@@ -243,7 +243,7 @@ exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
 bar {
         status_command i3blocks # i3status
         position top
-        separator_symbol " | "
+        separator_symbol "| "
         font pango:Hack Nerd Font Regular 10
         height 25
         colors {

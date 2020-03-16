@@ -1,6 +1,7 @@
 #!/bin/bash
 
 device="${BLOCK_INSTANCE:-wlp59s0}"
+ssid=$(iw dev wlp59s0 link | grep SSID | cut -d " " -f 2-)
 status=$(cat /sys/class/net/${device}/operstate)
 
 URGENT_VALUE=20
@@ -8,8 +9,8 @@ URGENT_VALUE=20
 if [[ "${status}" == "up" ]]; then
   if [[ -d "/sys/class/net/${device}/wireless" ]]; then
     quality=$(grep ${device} /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
-    echo "${quality}%"
-    echo "${quality}%"
+    echo " ${ssid} ${quality}%"
+    echo " ${ssid} ${quality}%"
     echo ""
 
     if [[ "${quality}" -le "${URGENT_VALUE}" ]]; then
