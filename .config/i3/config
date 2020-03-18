@@ -1,3 +1,5 @@
+# https://feeding.cloud.geek.nz/posts/creating-a-modern-tiling-desktop-environment-using-i3/
+
 set $mod Mod1
 set $term --no-startup-id tilix
 
@@ -18,9 +20,7 @@ bindsym $mod+Shift+z	gaps outer current minus 5
 
 bindsym $mod+u exec $HOME/.config/i3/scripts/switch-layout
 
-# exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
-#exec "setxkbmap -layout us,es"
-#exec "setxkbmap -option 'grp:alt_shift_toggle'"
+exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -54,6 +54,13 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Media Player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioStop exec playerctl stop
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
