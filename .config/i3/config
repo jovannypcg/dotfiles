@@ -12,6 +12,12 @@ gaps outer 0
 bindsym $mod+z		gaps outer current plus 5
 bindsym $mod+Shift+z	gaps outer current minus 5
 
+# ===========
+# Switch layout
+# ===========
+
+bindsym $mod+u exec $HOME/.config/i3/scripts/switch-layout
+
 # exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
 #exec "setxkbmap -layout us,es"
 #exec "setxkbmap -option 'grp:alt_shift_toggle'"
@@ -29,11 +35,14 @@ font pango: Hack Nerd Font Regular 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
+
+#       Conky
+exec --no-startup-id conky -d; sleep 1 && transset-df .5 -n Conky &
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -170,12 +179,12 @@ bindsym $mod+Shift+r restart
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # shutdown / restart / suspend...
-set $mode_system (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Ctrl+s) shutdown
+set $mode_system (e) logout, (r) reboot, (Ctrl+s) shutdown
 
 mode "$mode_system" {
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $i3lockwall && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id $i3lockwall && systemctl hibernate, mode "default"
+    # bindsym s exec --no-startup-id $i3lockwall && systemctl suspend, mode "default"
+    # bindsym h exec --no-startup-id $i3lockwall && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Ctrl+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
@@ -218,14 +227,14 @@ set $bg-color            #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
-set $urgent-bg-color     $nu
+# set $urgent-bg-color     $nu
 set $indicator-color     #8A05BE
 
 # class                 border              background         text                 indicator        child_border
 client.focused          $bg-color           $bg-color          $text-color          $indicator-color #285577
 client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color #222222
 client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color #5f676a
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $indicator-color #900000
+client.urgent           $nu                 $nu                $text-color          $indicator-color #900000
 
 # hide indicator and other borders
 # hide_edge_borders horizontal
@@ -252,7 +261,7 @@ bar {
                 #                  border             background         text
                 focused_workspace  $bg-color          $bg-color          $text-color
                 inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-                urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+                urgent_workspace   $nu                $nu                $text-color
         }
 }
 
