@@ -16,14 +16,27 @@ call plug#begin()
   " Plug 'jeffkreeftmeijer/vim-numbertoggle'
   Plug 'scrooloose/nerdtree'
   Plug 'guns/vim-clojure-static'
-  Plug 'tpope/vim-fireplace'
+  " Plug 'tpope/vim-fireplace'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-fugitive'
   Plug 'vim-scripts/paredit.vim'
   Plug 'luochen1990/rainbow'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+
+  " Clojure development
+  Plug 'guns/vim-sexp',    {'for': 'clojure'}
+  Plug 'liquidz/vim-iced', {'for': 'clojure'}
+  " Plug 'prabirshrestha/asyncomplete.vim'
+  " Plug 'liquidz/vim-iced-asyncomplete', {'for': 'clojure'}
 call plug#end()
+
+" Enable vim-iced's default key mapping
+" This is recommended for newbies
+let g:iced_enable_default_key_mappings = v:true
+
+let mapleader=","
+set timeoutlen=3000
 
 " let g:airline_theme='luna'
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
@@ -95,6 +108,7 @@ inoreabbr it' it 'meets some expectation' do<cr>end<esc>o
 let NERDTreeShowHidden=1
 
 " Mappings
+nnoremap gf :IcedDefJump<CR>
 nnoremap <C-b> :Buffers<CR>
 noremap <Up> :Files<CR>
 inoremap <Up> <NOP>
