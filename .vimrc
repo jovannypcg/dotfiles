@@ -70,6 +70,7 @@ set tabstop=2 " Tabs are 2 spaces
 
 " Development
 syntax enable
+set nofoldenable    " disable folding
 set foldmethod=syntax
 set foldlevel=5
 set autoread
