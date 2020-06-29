@@ -38,7 +38,7 @@ let g:iced_enable_default_key_mappings = v:true
 let mapleader=","
 set timeoutlen=3000
 
-" let g:airline_theme='luna'
+let g:airline_theme='deus'
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
 " FZF
