@@ -1,18 +1,35 @@
 [user]
-	name = Jovanny Cruz
-	email = jovannypcg@gmail.com
+  name = Jovanny Cruz
+  email = jovannypcg@gmail.com
+  signingkey = 99EA569135C253A9
 [core]
-	editor = vim
+  editor = vim
+  pager = diff-so-fancy | less --tabs=2 -RFX
 [alias]
-	co = checkout
-        com = checkout master
-	st = status --long -u
-	hist = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+  co = checkout
+  com = checkout master
+  st = status --long -u
+  hist = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 [commit]
-	gpgsign = true
+  gpgsign = true
+
+[color]
+  ui = true
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+[color "diff"]
+  meta = 11
+  frag = magenta bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
