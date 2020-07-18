@@ -259,11 +259,11 @@ label=
 interval=5
 separator=false
 
-# [microphone]
-# command=~/.config/i3blocks/blocks/microphone $BLOCK_NAME
-# label= 
-# interval=5
-# separator=false
+[microphone]
+command=~/.config/i3blocks/blocks/microphone $BLOCK_NAME
+label= 
+interval=5
+separator=false
 
 [battery]
 command=~/.config/i3blocks/blocks/battery $BLOCK_NAME
