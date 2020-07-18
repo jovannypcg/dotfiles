@@ -1,5 +1,4 @@
 # i3blocks config file
-# Based on: https://github.com/Anachron/i3blocks.git
 #
 # Please see man i3blocks for a complete reference!
 # The man page is also hosted at http://vivien.github.io/i3blocks
@@ -34,11 +33,12 @@
 
 # Part 1
 
-# [playerctl]
-# command=~/.config/i3blocks/blocks/playerctl $BLOCK_NAME
-# label= 
-# instance=ncspot
-# interval=5
+[playerctl]
+command=~/.config/i3blocks/blocks/playerctl $BLOCK_NAME
+label= 
+instance=ncspot
+interval=5
+separator=false
 
 # Run nmcli to get instance
 # [bandwidth]
@@ -71,29 +71,44 @@
 
 # Part 3
 
+# [layout-printer]
+# command=~/.config/i3blocks/blocks/layout-printer $BLOCK_NAME
+# label= 
+# interval=1
+# separator=false
+
 # Run nmcli to get the interface
 [network]
 command=~/.config/i3blocks/blocks/network $BLOCK_NAME
 label= 
 instance=wlp59s0
 interval=20
+separator=false
+
+# [ssid]
+# command=~/.config/i3blocks/blocks/ssid $BLOCK_NAME
+# label= 
+# interval=60
 
 [ethernet]
 command=~/.config/i3blocks/blocks/network $BLOCK_NAME
 label= 
 instance=ens20u1u2
 interval=20
+separator=false
 
-[memory]
-command=~/.config/i3blocks/blocks/memory $BLOCK_NAME
-label= 
-instance=mem;free
-interval=30
+# [memory]
+# command=~/.config/i3blocks/blocks/memory $BLOCK_NAME
+# label= 
+# instance=mem;free
+# interval=30
+# separator=false
 
-[cpu]
-command=~/.config/i3blocks/blocks/cpu $BLOCK_NAME
-label=  
-interval=2
+# [cpu]
+# command=~/.config/i3blocks/blocks/cpu $BLOCK_NAME
+# label=  
+# interval=2
+# separator=false
 
 # [display]
 # command=~/.config/i3blocks/blocks/display $BLOCK_NAME
@@ -181,11 +196,6 @@ interval=2
 
 # Part 9
 
-# [ssid]
-# command=~/.config/i3blocks/blocks/ssid $BLOCK_NAME
-# label= 
-# interval=60
-
 # [temperature]
 # command=~/.config/i3blocks/blocks/temperature $BLOCK_NAME
 # instance=Core
@@ -238,28 +248,32 @@ interval=2
 #markup=pango
 #interval=repeat
 
-[keymap]
-command=~/.i3-blocks/blocks/keymap $BLOCK_NAME
-label=
-interval=10
+# [keymap]
+# command=~/.i3-blocks/blocks/keymap $BLOCK_NAME
+# label=
+# interval=10
 
 [audio]
 command=~/.config/i3blocks/blocks/audio $BLOCK_NAME
 label= 
 interval=5
+separator=false
 
-[microphone]
-command=~/.config/i3blocks/blocks/microphone $BLOCK_NAME
-label= 
-interval=5
+# [microphone]
+# command=~/.config/i3blocks/blocks/microphone $BLOCK_NAME
+# label= 
+# interval=5
+# separator=false
 
 [battery]
 command=~/.config/i3blocks/blocks/battery $BLOCK_NAME
 label= 
 instance=0
 interval=5
+separator=false
 
 [datetime]
 command=~/.config/i3blocks/blocks/datetime $BLOCK_NAME
 label= 
 interval=5
+separator=false
