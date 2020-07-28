@@ -268,7 +268,7 @@ bar {
         position top
         separator_symbol "| "
         font pango:Hack Nerd Font Regular 12
-        height 30
+        height 25
         colors {
           background #282A36
           statusline #F8F8F2

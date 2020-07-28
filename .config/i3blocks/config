@@ -265,12 +265,12 @@ label=
 interval=5
 separator=false
 
-[battery]
-command=~/.config/i3blocks/blocks/battery $BLOCK_NAME
-label= 
-instance=0
-interval=5
-separator=false
+# [battery]
+# command=~/.config/i3blocks/blocks/battery $BLOCK_NAME
+# label= 
+# instance=0
+# interval=5
+# separator=false
 
 [datetime]
 command=~/.config/i3blocks/blocks/datetime $BLOCK_NAME
