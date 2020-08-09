@@ -7,7 +7,7 @@ set $term --no-startup-id tilix
 # i3-gaps
 # ===============
 
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
 gaps inner 5
 gaps outer 5
 
@@ -136,9 +136,9 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 # Consider https://fontawesome.com/v4.7.0/cheatsheet/
 set $ws1 " 1:  "
-set $ws2 " 2:  "
-set $ws3 " 3:  "
-set $ws4 " 4:  "
+set $ws2 " 2:  "
+set $ws3 " 3:  "
+set $ws4 " 4:  "
 set $ws5 " 5:  "
 set $ws6 " 6:  "
 set $ws7 " 7:  "
@@ -242,7 +242,7 @@ set $indicator-color     #8A05BE
 
 # class                 border  bground text    indicator child_border
 # client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #42F56F
+client.focused          #6272A4 #6272A4 #F8F8F2 #c203fc   #34EB43
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
 client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
