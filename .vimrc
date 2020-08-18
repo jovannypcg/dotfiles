@@ -1,5 +1,4 @@
 execute pathogen#infect()
-
 syntax on
 filetype plugin indent on
 
@@ -50,7 +49,7 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 " Appearance
-colorscheme darcula
+colorscheme nord
 
 set background=dark
 set t_Co=256
