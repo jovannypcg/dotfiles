@@ -2,6 +2,7 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 alias ggdiff="git diff --color | diff-so-fancy"
 export PATH=$PATH:/home/jovannypcg/dev/vim-iced/bin
 
+
 # Setting fd as the default source for fzf
 export FZF_DEFAULT_COMMAND='fd --type f'
 # To apply the command to CTRL-T as well
