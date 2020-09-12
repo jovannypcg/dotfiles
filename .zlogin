@@ -1,6 +1,6 @@
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 alias ggdiff="git diff --color | diff-so-fancy"
-alias exa="exa -l --git-ignore --icons"
+alias exa="exa -la --git-ignore --icons"
 export PATH=$PATH:/home/jovannypcg/dev/vim-iced/bin
 
 
