@@ -2,6 +2,7 @@
 
 SSID_NAME=$(iw dev wlp59s0 link | grep SSID | cut -d " " -f 2-)
 
+
 # You can put any urgent name so the block will give warning
 # if a network with this name is used, like public wifi or alike.
 # You can separate multiple values with \|
